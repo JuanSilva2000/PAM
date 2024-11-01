@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .app-container {
+    /* border: 1px solid red; */
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  
