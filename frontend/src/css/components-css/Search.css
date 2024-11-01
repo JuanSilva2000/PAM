@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 80%;
+}
+
+.input-recipe {
+  width: 100%;
+  padding: 20px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bolder;
+  font-size: large;
+  outline: none;
+  height: 40px;
+}
+
+@media (max-width: 600px) {
+  .input-recipe {
+    font-size: 14px;
+    padding: 8px;
+  }
+}

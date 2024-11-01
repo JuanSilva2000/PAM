@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import "./css/App.css";
 import SideMenu from "./components/SideMenu.jsx";
+import Search from "./components/Search.jsx";
+import RecipeContainer from "./components/RecipeContainer.jsx";
 
 const App = () => {
 
@@ -10,10 +12,15 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <SideMenu 
-        CategorySelected={CategorySelected} 
-        setCategorySelected={setCategorySelected} 
-      /> 
+      <SideMenu
+        CategorySelected={CategorySelected}
+        setCategorySelected={setCategorySelected}
+      />
+
+      <div className="main-container">
+        <Search />
+        <RecipeContainer />
+      </div>
     </div>
   );
 }
