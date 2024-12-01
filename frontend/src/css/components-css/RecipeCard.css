@@ -3,7 +3,7 @@
     width: 25%;
     box-sizing: border-box;
     padding: 15px;
-    margin: 10px;
+    /* margin: 10px; */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -33,6 +33,7 @@
     cursor: pointer;
     font-size: medium;
     font-weight: bold;
+    max-height: fit-content;
 }
 
 .header-card button:hover {
@@ -47,3 +48,10 @@
     width: 80%;
     border-radius: 8px;
 }
+
+@media (max-width: 1000px) {
+    .card-container{
+        width: auto;
+    }
+}
+
