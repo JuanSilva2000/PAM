@@ -15,8 +15,7 @@
     "cors": "^2.8.5",
     "express": "^4.21.1",
     "morgan": "^1.10.0",
-    "pam-2024": "file:",
-    "react-router-dom": "^7.0.1"
+    "pam-2024": "file:"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
