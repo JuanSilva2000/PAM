@@ -8,7 +8,7 @@ export const getRecipeInfo = async(req,res) => {
         const { strMeal, strMealThumb } = data.meals[0]
         return res.json({ strMeal, strMealThumb })
 
-    }catch(error){
+    } catch(error){
         console.log(error)
     }
 
