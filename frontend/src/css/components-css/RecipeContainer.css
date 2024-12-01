@@ -5,4 +5,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* border: 1px solid red; */
+    gap: 20px;
+}
+
+
+@media (max-width: 1000px) {
+    .recipes-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+    }
+
 }

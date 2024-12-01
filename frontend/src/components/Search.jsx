@@ -1,19 +1,12 @@
 import React from 'react'
-import { useForm } from '../hooks/useForm'
 import "../css/components-css/Search.css"
 
-const Search = () => {
-    const initialForm = {
-        recipe: ''
-    }
-
-    const {formState,onInputChange} = useForm(initialForm)
-
+const Search = ({formState,onInputChange}) => {
     const {recipe} = formState
 
     const onSubmit = (e) => {
         e.preventDefault()
-        console.log(formState)
+        // console.log(formState)
     }
 
   return (
@@ -33,3 +26,7 @@ const Search = () => {
 }
 
 export default Search
+
+
+
+
