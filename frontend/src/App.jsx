@@ -1,7 +1,8 @@
-import React, { useState,useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import SideMenu from "./components/SideMenu.jsx"
 import Search from "./components/Search.jsx"
 import RecipeContainer from "./components/RecipeContainer.jsx"
+import RecipeViewer from './components/RecipeViewer.jsx'
 import { useForm } from "./hooks/useForm"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { AppState } from './components/context/AppState.jsx'
@@ -41,6 +42,7 @@ const App = () => {
                   </>
                 }
               />
+              <Route path='/recipe/:name' element={<RecipeViewer />}/>
             </Routes>
           </div>
         </div>
