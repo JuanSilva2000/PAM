@@ -11,8 +11,6 @@ const RecipeContainer = ({ recipeSearch = '', CategorySelected, setCategorySelec
 
     const [recipesByCategory,setRecipesByCategory] = useState([])
     
-    // console.log(CategorySelected)
-
     useEffect(() => {
         if (recipeSearch === '') {
             setRecipesSearched({

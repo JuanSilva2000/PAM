@@ -1,0 +1,85 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+}
+
+.title {
+    /* border: 1px solid red; */
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.chat-container img{
+    width: 5%;
+}
+.messages-container {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: rgb(61, 60, 64);
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: rgb(240, 156, 184);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+
+.message.gpt {
+    align-self: flex-start;
+    background-color: whitesmoke;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    /* border: 1px solid red; */
+    align-self: center;
+}
+
+.input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: medium;
+    border: none;
+    background-color: rgb(240, 156, 184);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.button:hover {
+    background-color: rgb(250, 127, 168);
+}
