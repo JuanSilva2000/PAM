@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AppContext from '../components/context/AppContext'
 import '../css/components-css/RecipeViewer.css'
+import { Assistant } from './Assistant'
 
 const RecipeViewer = () => {
   const { isMenu, setIsMenu } = useContext(AppContext)
@@ -67,7 +68,6 @@ const RecipeViewer = () => {
           <p>{recipeData.instrucciones}</p>
         </div>
 
-
         <div className="recipe-video">
           <h3>Video</h3>
           <iframe
@@ -82,6 +82,12 @@ const RecipeViewer = () => {
             Ver en YouTube
           </a>
         </div>
+
+        <div className='recipe-assistant'>
+            <Assistant
+              name={name}
+            />
+        </div>      
 
       </div>
     </div>

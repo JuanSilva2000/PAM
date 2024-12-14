@@ -106,3 +106,15 @@
     color: rgb(240, 156, 184);
     align-self: center;
 }
+
+.recipe-assistant{
+    background-color: rgb(61, 60, 64);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    padding: 15px;
+    padding-left: 30px;
+    margin-top: 30px;
+    width: 90%;
+    align-self: center;
+    border-radius: 20px;
+}
