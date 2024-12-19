@@ -33,7 +33,7 @@ const SideMenu = ({ CategorySelected, setCategorySelected }) => {
         ))}
         <hr className="separator"/>
         <li className='favorites'>
-          <Link to={'/'}>
+          <Link to={'/favorites'}>
             Favorites
           </Link>
         </li>
