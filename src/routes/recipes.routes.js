@@ -1,8 +1,5 @@
 import { Router } from "express"
-import {getCategory} from "../controllers/getCategory.js"
-import { getRecipeInfo } from "../controllers/getRecipeInfo.js"
-import { getAllInfo } from "../controllers/getAllInfo.js"
-import { handleResponse } from "../controllers/handleResponse.js"
+import {  getCategory, getRecipeByName, getInfoById } from "../controllers/recipes.controller.js"
 
 const router = Router()
 
@@ -11,11 +8,12 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/recipesCategories/:category", getCategory)
+//router.get("/recipesCategories/:category", getCategory)
 
-router.get("/recipeInfo/:name", getRecipeInfo)
+router.get("/recipeInfo/:name", getRecipeByName)
 
-router.get("/allInfo/:nameRecipe", getAllInfo)
+router.get("/recipes/:id", getInfoById)
 
-router.post("/assistant", handleResponse)
+//router.get("/allInfo/:nameRecipe", getAllInfo)
 
 export default router

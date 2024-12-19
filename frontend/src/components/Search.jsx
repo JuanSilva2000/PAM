@@ -1,7 +1,7 @@
 import React from 'react'
 import "../css/components-css/Search.css"
 
-const Search = ({formState,onInputChange}) => {
+const Search = ({formState, onInputChange}) => {
     const {recipe} = formState
 
     const onSubmit = (e) => {
