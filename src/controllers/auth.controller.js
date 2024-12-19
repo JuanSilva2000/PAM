@@ -61,7 +61,6 @@ export const verifyToken = async (req, res) => {
     const { token } = req.cookies;
     if (!token) return res.send(false);
 
-
     try {
         const decoded = jwt.verify(token, TOKEN_SECRET);
 
