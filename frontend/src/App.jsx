@@ -10,6 +10,8 @@ import LoginPage from './pages/LoginPage.jsx'
 import RegisterPage from './pages/RegisterPage.jsx'
 import { AuthProvider, useAuth } from './context/AuthContext.jsx'
 import { ProtectedRoute } from "./routes.jsx"
+import { FavoritesProvider } from './context/FavoritesContext.jsx'
+import FavoritesPage from './pages/FavoritesPage.jsx'
 import { RecipesProvider } from './context/RecipesContext.jsx'
 import { Navbar } from './components/Navbar.jsx'
 import RecipeInfoPage from './pages/RecipeInfoPage.jsx'
@@ -58,6 +60,7 @@ const AppContent = ({ CategorySelected, setCategorySelected, formState, onInputC
           }
         />
         <Route path='/recipes/:id' element={<RecipeInfoPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
       </Route>
 
     </Routes>
@@ -72,9 +75,11 @@ const App = () => {
     <AuthProvider>
       <RecipesProvider>
         <AppState>
+          <FavoritesProvider>
             <Router>
               <AppContent CategorySelected={CategorySelected} setCategorySelected={setCategorySelected} formState={formState} onInputChange={onInputChange} />
             </Router>
+          </FavoritesProvider>
         </AppState>
       </RecipesProvider>
     </AuthProvider>
