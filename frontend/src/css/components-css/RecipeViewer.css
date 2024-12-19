@@ -1,14 +1,27 @@
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    margin: 20px 0;
+}
+
+p .back-link {
+    margin-left: 30px;
+}
+
 .mark {
+    width: 90%;
     color: white;
     background-color: rgb(61, 60, 64);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 40px;
-    height: 100px;
-    margin-top: 0px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    margin-left: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2%;
+    padding: 1.25% 2%;
     border-radius: 15px;
 }
 
@@ -44,7 +57,6 @@
 
 .recipe-ingredients li {
     margin-bottom: 5px;
-
 }
 
 .recipe-ingredients h3 {

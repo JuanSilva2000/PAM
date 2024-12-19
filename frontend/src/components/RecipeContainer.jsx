@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import RecipeCard from "./RecipeCard"
-import SearchCard from "./SearchCard"
+//import SearchCard from "./SearchCard"
 import "../css/components-css/RecipeContainer.css"
+import { useRecipes } from '../context/RecipesContext'
+import AppContext from './context/AppContext'
 
-const RecipeContainer = ({ recipeSearch = '', CategorySelected, setCategorySelected  }) => {
+const RecipeContainer = ({ recipeSearch = '', CategorySelected, setCategorySelected }) => {
     const [recipesSearched, setRecipesSearched] = useState({
         name: '',
         img: ''
     })
+    const { isMenu, setIsMenu } = useContext(AppContext);
+    const { recipes, getRecipesByCategory, getRecipeByName } = useRecipes();
 
-    const [recipesByCategory,setRecipesByCategory] = useState([])
-    
     useEffect(() => {
+        if (!isMenu) {
+            setIsMenu(true)
+        }
         if (recipeSearch === '') {
             setRecipesSearched({
                 name: '',
                 img: ''
-            })
+            });
         } else {
             const getRecipeSearched = async () => {
-                try {
-                    const res = await fetch(`http://localhost:3000/recipeInfo/${recipeSearch}`)
-                    const data = await res.json()
-                    const { strMeal, strMealThumb } = data
-                    setRecipesSearched({
-                        name: strMeal,
-                        img: strMealThumb
-                    })
-                } catch (error) {
-                    console.error(error)
-                }
+                const recipe = await getRecipeByName(recipeSearch);
+                const { strMeal, strMealThumb } = recipe;
+                setRecipesSearched({
+                    name: strMeal,
+                    img: strMealThumb
+                });
             }
 
             const handleEnter = (e) => {
@@ -45,74 +45,41 @@ const RecipeContainer = ({ recipeSearch = '', CategorySelected, setCategorySelec
             }
         }
 
-
-
-    }, [recipeSearch])
-
+    }, [recipeSearch]);
 
     useEffect(() => {
-        if(CategorySelected !== 'All'){
-            const getRecipesByCategorie = async () => {
-                try {
-                    const res = await fetch(`http://localhost:3000/recipesCategories/${CategorySelected}`)
-                    const data = await res.json()
-                    // recipesByCategory = data
-                    setRecipesByCategory(data)
-                    
-                    
-                } catch (error) {
-                    console.error(error)
-                }
-                
-            }
-            getRecipesByCategorie()
-        }
-        
-    }, [CategorySelected])
-    
+        getRecipesByCategory(CategorySelected);
+    }, [CategorySelected]);
 
-    //Return Render
     if (recipeSearch === '' && CategorySelected === 'All') {
-        const NameRecipes = ['Kumpir', 'apam', 'asado', 'banana', 'gateau', 'fry', 'confit', 'eton', 'fish pie']
-        
         return (
             <main className='recipes-container'>
-                {NameRecipes.map((name, index) => (
-                    <RecipeCard
-                        key={index}
-                        name={name}
-                    />
-                ))}
+                {
+                    recipes.map((recipe, index) => (
+                        <RecipeCard
+                            key={index}
+                            recipe={recipe}
+                        />
+                    ))
+                }
             </main>
         )
-    } else if (recipeSearch !== ''){
-        
-        setCategorySelected('All')
-
+    } else if (recipeSearch !== '') {
+        setCategorySelected('All');
         return (
             <main className='recipes-container'>
-                <SearchCard
-                    name={recipesSearched.name}
-                    img={recipesSearched.img}
-                />
+                <RecipeCard recipe={recipesSearched} />
             </main>
-        )
-    }else {
+        );
+    } else {
         return (
             <main className='recipes-container'>
-                {recipesByCategory.map((o, index) => (
-                    <SearchCard
-                        key={index}
-                        name={o.name}
-                        img={o.img}
-                    />
+                {recipes.map((o, index) => (
+                    <RecipeCard key={index} recipe={o} />
                 ))}
             </main>
         )
     }
 }
 
-export default RecipeContainer
-
-
-
+export default RecipeContainer;

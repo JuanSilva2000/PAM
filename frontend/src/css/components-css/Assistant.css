@@ -1,14 +1,13 @@
 .chat-container {
     display: flex;
     flex-direction: column;
-    height: 60vh;
-    width: 80%;
-    margin: auto;
-    /* border: 1px solid #ddd; */
+    height: 78vh;
+    width: 85%;
+    margin: auto; 
     border-radius: 5px;
 }
 
-.title {
+.title-chat {
     /* border: 1px solid red; */
     padding: 10px;
     display: flex;
@@ -20,7 +19,8 @@
 }
 
 .chat-container img{
-    width: 5%;
+    width: 7.5%;
+    margin-left: 10px;
 }
 .messages-container {
     flex: 1;
@@ -53,14 +53,14 @@
     color: black;
 }
 
-.input-container {
+.input-chat-container {
     display: flex;
-    padding: 10px;
-    /* border: 1px solid red; */
+    padding: 10px; 
+    width: 90%;
     align-self: center;
 }
 
-.input {
+.input-chat {
     flex: 1;
     padding: 10px;
     font-size: 16px;
@@ -68,7 +68,7 @@
     margin-right: 10px;
 }
 
-.button {
+.button-chat {
     padding: 10px 20px;
     font-size: medium;
     border: none;
@@ -80,6 +80,6 @@
     font-weight: bolder;
 }
 
-.button:hover {
+.button-chat:hover {
     background-color: rgb(250, 127, 168);
 }

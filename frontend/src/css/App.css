@@ -2,13 +2,24 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .app-container {
   height: auto;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   flex-wrap: nowrap;
+  background-color: rgb(81, 79, 89);
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
 }
 
 .main-container {
@@ -20,6 +31,10 @@
   flex-direction: column;
   padding: 5vh 7vh;
   margin-left: 15%; 
+}
+
+.main-container h1 {
+  color: #fff;
 }
 
 .hide ~ .main-container {

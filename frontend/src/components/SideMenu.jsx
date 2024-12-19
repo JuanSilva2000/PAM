@@ -1,13 +1,14 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import AppContext from '../components/context/AppContext'
 import "../css/components-css/SideMenu.css"
+import { useAuth } from '../context/AuthContext'
+import { Link } from 'react-router-dom'
 
 const SideMenu = ({ CategorySelected, setCategorySelected }) => {
-
   const categories = ['All', 'Dessert', 'Pasta', 'Seafood', 'Starter', 'Vegetarian', 'Breakfast']
 
   const {isMenu} = useContext(AppContext)
-
+  const {logout} = useAuth();
 
   const showMenu = ()=> {
     document.querySelector('.categories-container').classList.toggle('active')
@@ -30,7 +31,17 @@ const SideMenu = ({ CategorySelected, setCategorySelected }) => {
             {category}
           </li>
         ))}
+        <hr className="separator"/>
+        <li className='favorites'>
+          <Link to={'/'}>
+            Favorites
+          </Link>
+        </li>
+        
       </ul>
+      <div className='logout'>
+        <button onClick={logout}>Logout</button>
+      </div> 
     </aside>
   )
 }
