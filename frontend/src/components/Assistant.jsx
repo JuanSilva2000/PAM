@@ -6,6 +6,8 @@ export const Assistant = ({ name }) => {
     const [inputMessage, setInputMessage] = useState("")
     const [loading, setLoading] = useState(false)
 
+    const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4000/api";
+
     const sendMessage = async () => {
         if (!inputMessage.trim()) return
 
@@ -16,7 +18,7 @@ export const Assistant = ({ name }) => {
         setLoading(true)
 
         try {
-            const response = await fetch("http://localhost:4000/api/assistant", {
+            const response = await fetch(`${API_URL}/assistant`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
